@@ -1,0 +1,114 @@
+
+  <title>MQTT Test - Send Message to Arduino</title>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 40px;
+      background: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    #log {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 20px;
+      height: 200px;
+      overflow-y: auto;
+    }
+    button {
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-left: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0b7dda;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💊 PillMate - Send Message to Arduino</h1>
+
+  <input id="messageInput" type="text" placeholder="Type your message..." style="width: 300px; padding: 8px;" />
+  <button onclick="sendMessage()">Send</button>
+  <button onclick="sendToArduino()">Send Pill Alert 💊</button>
+
+  <div id="log"></div>
+
+  <script>
+    // =============================
+    // 🔗 MQTT CONFIGURATION
+    // =============================
+    const MQTT_BROKER = "wss://broker.hivemq.com:8884/mqtt";
+    const MQTT_TOPIC = "PillMate/20";
+
+    const logDiv = document.getElementById("log");
+
+    let mqttClient = null;
+    let mqttConnected = false;
+
+    // Log helper
+    function log(msg) {
+      logDiv.innerHTML += `<p>${msg}</p>`;
+      logDiv.scrollTop = logDiv.scrollHeight;
+      console.log(msg);
+    }
+
+    // Initialize MQTT connection
+    function initMQTT() {
+      mqttClient = mqtt.connect(MQTT_BROKER);
+
+      mqttClient.on("connect", () => {
+        mqttConnected = true;
+        log("✅ Connected to MQTT broker");
+        mqttClient.subscribe(MQTT_TOPIC);
+        log("📡 Subscribed to topic: " + MQTT_TOPIC);
+      });
+
+      mqttClient.on("error", (err) => {
+        log("❌ MQTT error: " + err.message);
+      });
+
+      mqttClient.on("message", (topic, message) => {
+        log("📩 Message received: " + message.toString());
+      });
+    }
+
+    // =============================
+    // 💊 Send Functions
+    // =============================
+
+    // Generic message sender (from text box)
+    function sendMessage() {
+      const msg = document.getElementById("messageInput").value;
+      if (!msg) return alert("Please enter a message first!");
+
+      sendToArduino(msg);
+      document.getElementById("messageInput").value = "";
+    }
+
+    // Predefined function to send pill reminder
+    function sendToArduino(payload = "ถึงเวลากินยาแล้ว💊") {
+      if (!mqttClient || !mqttConnected) {
+        log("⚠️ Not connected to MQTT broker yet.");
+        return;
+      }
+      mqttClient.publish(MQTT_TOPIC, payload);
+      log("➡️ Sent to Arduino: " + payload);
+    }
+
+    // =============================
+    // 🚀 Initialize on load
+    // =============================
+    window.addEventListener("load", initMQTT);
+  </script>
+
+</body>
+</html>
