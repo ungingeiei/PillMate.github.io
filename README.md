@@ -10,7 +10,7 @@
 [Click to website](https://ungingeiei.github.io/PillMate.github.io/)
 
 ## Demo video
-[![Watch the video](https://www.youtube.com/watch?v=DLU0R32vnR4)
+[Watch the video](https://www.youtube.com/watch?v=DLU0R32vnR4)
 
 ## Poster
 [View Project Poster](./Mate.pdf)
