@@ -13,7 +13,7 @@
 [![Watch the video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 ---
 ## Poster
-[View Project Poster](poster.pdf)
+[View Project Poster](./Mate.pdf)
 ---
 ## Author
 
