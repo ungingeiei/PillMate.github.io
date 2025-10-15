@@ -1,20 +1,20 @@
 # Physical Computing Project 2025 - IT KMITL
----
+
 ## จุดประสงค์
 โปรเจกต์ IoT Microcontroller สำหรับการปล่อยยาอัตโนมัติที่สามารถตั้งเวลาได้ เป็นโปรเจคที่พัฒนาขึ้นเพื่อช่วยให้ผู้ป่วยสามารถรับประทานยาได้ตรงเวลาโดยไม่ต้องพึ่งการจดจำด้วยตนเอง 
----
+
 ## รายละเอียดโปรเจคต์
 ระบบจะใช้ ไมโครคอนโทรลเลอร์ เป็นตัวควบคุมหลักในการตั้งเวลา ตรวจสอบ และสั่งการให้ ตู้ปล่อยยา ทำงานตามเวลาที่กำหนด พร้อมทั้งมีระบบ แจ้งเตือนด้วยเสียงหรือไฟ เพื่อเตือนผู้ใช้เมื่อถึงเวลารับประทานยา
----
+
 ## Website link
 [Click to website](https://www.youtube.com/watch?v=VIDEO_ID)
----
+
 ## Demo video
 [![Watch the video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
----
+
 ## Poster
 [View Project Poster](./Mate.pdf)
----
+
 ## Author
 
  Id       | Name                 | Image       | Github         |
