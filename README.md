@@ -7,10 +7,10 @@
 ระบบจะใช้ ไมโครคอนโทรลเลอร์ เป็นตัวควบคุมหลักในการตั้งเวลา ตรวจสอบ และสั่งการให้ ตู้ปล่อยยา ทำงานตามเวลาที่กำหนด พร้อมทั้งมีระบบ แจ้งเตือนด้วยเสียงหรือไฟ เพื่อเตือนผู้ใช้เมื่อถึงเวลารับประทานยา
 
 ## Website link
-[Click to website](https://www.youtube.com/watch?v=VIDEO_ID)
+[Click to website](https://ungingeiei.github.io/PillMate.github.io/)
 
 ## Demo video
-[![Watch the video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+[![Watch the video](https://www.youtube.com/watch?v=DLU0R32vnR4)
 
 ## Poster
 [View Project Poster](./Mate.pdf)
